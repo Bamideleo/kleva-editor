@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowSpace - Streamline Your Team's Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=150" alt="FlowSpace Logo" class="logo-img">
+                    <span class="logo-text">FlowSpace</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn btn-secondary" id="login-btn">Login</button>
+                    <button class="btn btn-primary" id="signup-btn">Get Started Free</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Streamline Your Team's Workflow in One Platform</h1>
+                    <p class="hero-description">FlowSpace brings your team together with powerful collaboration tools, project management, and seamless communication - all in one intuitive platform.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" id="hero-cta">Start Free Trial</button>
+                        <button class="btn btn-outline btn-large" id="hero-demo">Watch Demo</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10,000+</span>
+                            <span class="stat-label">Teams Trust Us</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Customer Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.9/5</span>
+                            <span class="stat-label">Average Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="Team collaboration dashboard" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Everything Your Team Needs</h2>
+                    <p class="section-subtitle">Powerful features designed to boost productivity and collaboration</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100" alt="Project Management">
+                        </div>
+                        <h3 class="feature-title">Project Management</h3>
+                        <p class="feature-description">Organize tasks, set deadlines, and track progress with our intuitive project management tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=100" alt="Team Collaboration">
+                        </div>
+                        <h3 class="feature-title">Team Collaboration</h3>
+                        <p class="feature-description">Real-time messaging, file sharing, and collaborative editing in one workspace.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100" alt="Analytics Dashboard">
+                        </div>
+                        <h3 class="feature-title">Analytics Dashboard</h3>
+                        <p class="feature-description">Gain insights into team performance and project metrics with detailed analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=100" alt="Time Tracking">
+                        </div>
+                        <h3 class="feature-title">Time Tracking</h3>
+                        <p class="feature-description">Monitor time spent on tasks and projects with automatic time tracking features.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=100" alt="File Management">
+                        </div>
+                        <h3 class="feature-title">File Management</h3>
+                        <p class="feature-description">Store, organize, and share files securely with advanced version control.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=100" alt="Integrations">
+                        </div>
+                        <h3 class="feature-title">Integrations</h3>
+                        <p class="feature-description">Connect with your favorite tools like Slack, Google Drive, and Microsoft Teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Simple, Transparent Pricing</h2>
+                    <p class="section-subtitle">Choose the plan that works best for your team</p>
+                </div>
+                <div class="pricing-toggle">
+                    <span class="toggle-label">Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="pricing-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Yearly</span>
+                    <span class="discount-badge">Save 20%</span>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Starter</h3>
+                            <div class="plan-price">
+                                <span class="price-amount" data-monthly="$19" data-yearly="$15">$19</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Perfect for small teams getting started</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item">Up to 5 team members</li>
+                            <li class="feature-item">10GB storage</li>
+                            <li class="feature-item">Basic project management</li>
+                            <li class="feature-item">Email support</li>
+                            <li class="feature-item disabled">Advanced analytics</li>
+                            <li class="feature-item disabled">Custom integrations</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full" data-plan="starter">Get Started</button>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Professional</h3>
+                            <div class="plan-price">
+                                <span class="price-amount" data-monthly="$49" data-yearly="$39">$49</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">Ideal for growing businesses</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item">Up to 25 team members</li>
+                            <li class="feature-item">100GB storage</li>
+                            <li class="feature-item">Advanced project management</li>
+                            <li class="feature-item">Priority support</li>
+                            <li class="feature-item">Advanced analytics</li>
+                            <li class="feature-item">Custom integrations</li>
+                        </ul>
+                        <button class="btn btn-primary btn-full" data-plan="professional">Get Started</button>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Enterprise</h3>
+                            <div class="plan-price">
+                                <span class="price-amount" data-monthly="$99" data-yearly="$79">$99</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="plan-description">For large organizations</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item">Unlimited team members</li>
+                            <li class="feature-item">1TB storage</li>
+                            <li class="feature-item">Enterprise project management</li>
+                            <li class="feature-item">24/7 dedicated support</li>
+                            <li class="feature-item">Advanced analytics</li>
+                            <li class="feature-item">Custom integrations</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full" data-plan="enterprise">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Trusted by Teams Worldwide</h2>
+                    <p class="section-subtitle">See what our customers are saying about FlowSpace</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"FlowSpace has transformed how our team collaborates. We've seen a 40% increase in productivity since implementing it."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80" alt="Sarah Chen" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Chen</h4>
+                                <p class="author-role">CTO, TechInnovate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"The analytics dashboard alone is worth the price. We can now make data-driven decisions about our projects and team performance."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80" alt="Marcus Rodriguez" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Marcus Rodriguez</h4>
+                                <p class="author-role">Project Manager, Global Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Switching to FlowSpace was the best decision we made last year. Our team is more organized and communication has never been better."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80" alt="Emily Watson" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Emily Watson</h4>
+                                <p class="author-role">Team Lead, Creative Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Get answers to common questions about FlowSpace</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How does the free trial work?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our free trial gives you full access to all Professional plan features for 14 days. No credit card required. You can upgrade, downgrade, or cancel at any time during the trial.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I change plans later?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the billing accordingly.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is my data secure?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We use enterprise-grade security measures including SSL encryption, regular backups, and secure data centers. We're also GDPR and SOC 2 compliant.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you offer discounts for non-profits?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a 50% discount on all plans for registered non-profit organizations. Contact our sales team with your documentation to get set up.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What integrations do you support?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We integrate with popular tools like Slack, Microsoft Teams, Google Workspace, Trello, Asana, Jira, and many more. Check our integrations page for the complete list.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Transform Your Team's Workflow?</h2>
+                    <p class="cta-description">Join thousands of teams already using FlowSpace to work smarter and achieve more together.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-primary btn-large" id="final-cta">Start Your Free Trial</button>
+                        <button class="btn btn-outline btn-large" id="schedule-demo">Schedule a Demo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=120" alt="FlowSpace Logo" class="logo-img">
+                        <span class="logo-text">FlowSpace</span>
+                    </div>
+                    <p class="footer-description">Streamline your team's workflow with powerful collaboration tools and project management.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features" class="footer-link">Features</a></li>
+                        <li><a href="#pricing" class="footer-link">Pricing</a></li>
+                        <li><a href="#" class="footer-link">Integrations</a></li>
+                        <li><a href="#" class="footer-link">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Documentation</a></li>
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Community</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 FlowSpace. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

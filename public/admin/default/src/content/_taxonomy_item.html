@@ -1,0 +1,64 @@
+<li class="dd-item dd3-item" data-v-id data-v-taxonomy_item>
+	<div class="dd-handle dd3-handle">Drag</div>
+	<div class="dd3-buttons">
+
+		<button onclick="removeTaxonomy(this)" title="Remove taxonomy"
+				class="btn btn-outline-danger btn-icon btn-sm border-0">
+			<i class="la la-trash"></i>
+		</button>
+		<button onclick="addTaxonomy(this)" title="Add child taxonomy"
+				class="btn btn-icon btn-outline-secondary btn-sm border-0">
+			<i class="la la-plus"></i>
+		</button>
+		<button type="button" data-bs-toggle="collapse" href="#filters" aria-expanded="false"
+				aria-controls="filters" title="Edit"
+				class="btn btn-icon btn-outline-secondary btn-sm border-0  expand-btn">
+			<i class="la la-pen"></i>
+		</button>
+	</div>
+	<div class="dd3-content">
+
+		<label class="form-check checkbox">
+			<input type="checkbox" class="form-check-input" data-v-vvveb-action="table.selectRow" value="" name="taxonomy_item_id[]" data-v-taxonomy_item_id>
+			<i class="icon-link-outline type-icon opacity-75"></i>
+			<!--
+			<i class="icon-cube-outline opacity-75"          data-v-if="menu.type = 'product'"></i>
+			<i class="icon-document-outline opacity-75"      data-v-if="menu.type = 'page'"></i>
+			<i class="icon-document-text-outline opacity-75" data-v-if="menu.type = 'post'"></i>
+			<i class="icon-link-outline opacity-75"          data-v-if="menu.type = 'link'"></i>
+			<i class="icon-text-outline opacity-75"          data-v-if="menu.type = 'text'"></i>
+			-->
+			<span class="form-check-label" data-v-taxonomy_item-name>New item</span>
+		</label>
+
+	</div>
+	
+	<div class="expand" style="display:none">
+		
+		<div class="card">
+		  <div class="card-body">
+			
+				@@include('@@taxonomy_template')
+
+		  </div>
+		  
+			<div class="card-footer text-end">
+			
+				<button type="submit" value="logout" class="btn btn-primary btn-save">
+
+                  <span class="loading d-none">
+                    <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                    </span>
+                    <span>Saving ...</span>...
+                  </span>
+
+                  <span class="button-text">
+                    Save changes
+                  </span>
+
+                </button>			
+			</div>
+		</div>
+	</div>
+
+</li>

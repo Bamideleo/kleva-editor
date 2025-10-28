@@ -1,0 +1,136 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - User","scripts":"","base_href":"../"})
+
+<body>
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+
+    <div class="main">
+
+	@@include('../_includes/top-header.html')
+
+	<form id="user-form" action="" method="post" class="settings" data-v-user>
+	   <input type="hidden" name="action" id="action" value="save">
+	   <div class="actions">
+		<div class="title">
+				<h4 class="text-muted my-2">
+					<i class="icon-people-outline"></i>
+					<span>Admin user</span>
+				</h4>
+			</div>
+		<div class="btns">
+			<a href="{$this.adminPath}index.php?module=admin/users" title="Admin list"
+				class="btn btn-icon btn-outline-secondary me-2">
+					<i class="la la-arrow-left"></i><span>Admin list</span>
+			 </a>
+
+			  <button type="submit" href=""
+				 class="btn btn-primary btn-icon ms-1">
+						<i class="icon-create-outline me-2"></i>
+						<span>Save user</span>
+			  </button>
+	   </div>
+	   </div>
+	   <div>
+		  <div id="main-content" class="px-4">
+
+				@@include('../_includes/notifications.html')
+				
+				@@include('../user/_user_form.html', {"prefix": "admin"})
+
+			  <div class="mb-3 row">
+				<div class="col-md-6">
+			  
+				  <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label" >Role</label>
+					<div class="col-sm-10">
+					  <select class="form-control" id="input-site-title" placeholder="Display name" name="admin[role_id]" data-v-role-list>
+					  
+						<option data-v-role></option>
+						
+					  </select>	
+					</div>
+				  </div>	
+				
+				 <div class="mb-3 row">
+					<label for="input-site-title" class="col-sm-2 col-form-label">Site access</label>
+					<div class="col-sm-10">
+
+						<div class="sites-list" data-v-sites>
+						
+							<div class="bg-primary bg-opacity-10 p-1 px-2 d-inline-block me-3">
+								<div class="form-check form-check-inline">
+								  <label class="form-check-label">
+									<input class="form-check-input" type="checkbox" value="" id="all-sites-check" name="admin[site_access]">
+									<span data-v-name>All sites</span>
+								  </label>
+								</div>						
+							</div>						
+							
+							<div class="form-check form-check-inline" data-v-site>
+							  <label class="form-check-label">
+								<input class="form-check-input" type="checkbox" value="1" name="admin[site_access][]" data-v-site_id>
+								<span data-v-name>Site 1</span>
+							  </label>
+							</div>
+							<div class="form-check form-check-inline" data-v-site>
+							  <label class="form-check-label">
+								<input class="form-check-input" type="checkbox" value="2" name="admin[site_access][]" data-v-site_id>
+								<span data-v-name>Site 2</span>
+							  </label>
+							</div>
+							<div class="form-check form-check-inline" data-v-site>
+							  <label class="form-check-label>
+								<input class="form-check-input" type="checkbox" value="3" name="admin[site_access][]" data-v-site_id>
+								<span data-v-name>Site 3</span>
+							  </label>
+							</div>
+							<div class="form-check form-check-inline" data-v-site>
+							  <label class="form-check-label">
+								<input class="form-check-input" type="checkbox" value="4" name="admin[site_access][]" data-v-site_id>
+								<span data-v-name>Site 4</span>
+							  </label>
+							</div>
+						</div>
+					</div>
+				  </div>	
+			  
+				</div>
+			</div>
+			</div>
+        </div>
+        </form>
+	
+	@@include('../_includes/main-footer.html')
+    </div>
+
+</div>
+
+
+
+@@include('../_includes/footer-scripts.html')
+
+
+<script>
+@@include('../_includes/media-variables.html')
+
+let sitesCheckBox = document.querySelectorAll(".sites-list input[type=checkbox]");
+let allSitesCheckbox = document.getElementById("all-sites-check");
+
+sitesCheckBox.forEach(e => e.addEventListener("change", function (e) {
+	if (this.id == "all-sites-check" && this.checked) {
+		sitesCheckBox.checked = false;
+		allSitesCheckbox.checked = true;
+	} else {
+		allSitesCheckbox.checked = false;
+	}
+})); 
+</script>
+
+<!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" src="libs/vvveb/index.js"></script>
+<link href="libs/media/media.css" rel="stylesheet">
+
+@@include('../_includes/footer.html')

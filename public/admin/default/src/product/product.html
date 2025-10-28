@@ -1,0 +1,386 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Edit product","scripts":"","base_href":"../"})
+
+<body class="product">
+
+<div id="container">
+       
+    @@include('../_includes/sidebar.html')
+        
+    <div class="main">
+
+		@@include('../_includes/top-header.html')
+
+        <div class="actions flex-column flex-md-row mb-0">
+
+			<div class="title">
+				<h4 class="text-muted my-2">
+					<i class="icon-cube-outline"></i>
+					<span data-v-type-name>Product</span>
+				</h4>
+			</div>
+
+            <div class="btns">
+		
+				<a href="/admin/?module=product/products" title="Product list" class="btn btn-icon btn-outline-secondary me-2" data-v-products-list-url>
+						<i class="la la-arrow-left"></i>
+						<span>
+							<span data-v-type-name>Product</span> 
+							<span>list</span>
+						</span>
+				 </a>
+
+                <button type="submit" href="" data-v-check-permission-save
+                        class="btn btn-primary btn-icon ms-1"
+                        onclick="document.getElementById('form').requestSubmit();">
+                    <i class="icon-create-outline"></i> <span>Save</span> <span data-v-type-name>product</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="content">
+
+
+            <div class="content clearfix">
+
+			@@include('../_includes/notifications.html')
+
+                <form id="form" action="" method="post" class="settings" data-v-product>
+
+                    <input type="hidden" name="action" id="action" value="save">
+					<input type="hidden" name="product_id" id="product_id" value="" data-v-if="this.product.product_id" data-v-product-product_id>   
+
+                    <div class="columns">
+                        <div class="left-column pt-3">
+
+    						<ul class="nav nav-tabs" id="product-tabs">
+								<li class="nav-item"><a class="nav-link active" href="#tab-general" data-bs-toggle="tab">General</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-relations" data-bs-toggle="tab">Relations</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-attribute" data-bs-toggle="tab">Attribute</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-option" data-bs-toggle="tab">Option</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-variant" data-bs-toggle="tab">Variants</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-inventory" data-bs-toggle="tab">Inventory</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-shipping" data-bs-toggle="tab">Shipping</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-image" data-bs-toggle="tab">Image gallery</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-subscription" data-bs-toggle="tab">Subscription</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-discount" data-bs-toggle="tab">Discount</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-promotion" data-bs-toggle="tab">Promotion</a></li>
+								<li class="nav-item"><a class="nav-link" href="#tab-points" data-bs-toggle="tab">Points</a></li>
+								<!--
+								<li class="nav-item"><a class="nav-link" href="#tab-digital-assets" data-bs-toggle="tab">Digital assets</a></li>
+								-->
+							</ul>
+
+
+                            <div class="tab-content pe-2" id="product-tab-content">
+								
+								@@include('_product-general.html')
+								@@include('_product-relations.html')
+								@@include('_product-attribute.html')
+								@@include('_product-option.html')
+								@@include('_product-variant.html')
+								@@include('_product-inventory.html')
+								@@include('_product-shipping.html')
+								@@include('_product-image.html')
+								@@include('_product-subscription.html')
+								@@include('_product-discount.html')
+								@@include('_product-promotion.html')
+								@@include('_product-points.html')
+								<!-- 
+								@@include('_product-digital-assets.html')
+								-->
+
+                            </div>
+                </form>
+            </div>
+            <div class="right-column flat small">
+
+                <label class="header" data-v-header="element_header"
+                       for="header_featured_image"><span>Featured Media</span>
+                    <div class="header-arrow"></div>
+                </label>
+                <input class="header_check" type="checkbox" checked="true" id="header_featured_image">
+                <div class="section" data-v-section="element_header">
+
+                    <input type="hidden" data-v-image name="image" id="featured-image-input" value="">
+
+				    <img data-v-image src="" alt=""
+                         id="featured-image-thumb"
+                         data-v-placeholder=""
+						 data-media-gallery 
+						 data-target-input="#featured-image-input"
+						 data-target-thumb="#featured-image-thumb" data-type="single"                         
+						 class="bg-body-tertiary rounded img-fluid">
+
+
+                    <div class="py-3 text-center">
+							<div class="btn-group w-100">
+								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm w-100"
+										data-media-gallery data-target-input="#featured-image-input"
+										data-target-thumb="#featured-image-thumb" data-type="single">
+										<i class="la la-image la-lg"></i> Set featured media
+								</button>
+
+								<button type="button" class="btn btn-outline-secondary btn-icon btn-sm" onclick="clearMedia()">
+									<i class="la la-times"></i>
+								</button>
+							</div>
+                    </div>
+
+
+                </div>
+
+                 <!-- @-@include('_product_taxonomies.html') -->
+
+				<label class="header" data-v-header="default" for="header_product_options"><span data-v-type-name>Product</span> options
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_product_options">
+				<div class="section" data-v-section="default">
+
+					<div class="mb-3">
+						<label class="form-label" for="input-status"><span>Status</span></label>
+
+						<div class="input-group">
+							<select name="status" id="input-status" placeholder="Visibility" class="form-select" data-v-product-status>
+								<option value="0" data-v-option>Disabled</option>
+								<option value="1" data-v-option>Enabled</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<label class="header mt-4" data-v-header="default" for="header_sites">Sites
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_sites">
+				<div class="section" data-v-section="default">
+
+					<div class="mb-3">
+
+					   <div class="categories-list px-2" data-v-sites>
+							<label class="form-check" data-v-site>
+								<input type="checkbox" class="form-check-input" value="1" name="site[]" data-v-site_id>
+								<span class="form-check-label" data-v-name title="Default">Default</span>
+							  </label>
+					   </div>
+						
+					</div>
+				</div>  
+                 
+				<label class="header mt-4" data-v-header="default" for="header_template">Template
+					<div class="header-arrow"></div>
+				</label>
+				<input class="header_check" type="checkbox" checked="true" id="header_template">
+				<div class="section" data-v-section="default">
+
+					<div class="mb-3">
+
+						<div class="input-group">
+							<!-- div class="input-group-addon"><i class="icon-eye-outline"></i></div-->
+							<select class="form-select" placeholder="Visibility" name="template" data-v-templates>
+									<option value="" title="Default template used for this page">-- Default template --</option>
+									<option value="published" data-v-option>Published</option>
+									<option value="pending" data-v-option>Pending</option>
+									<option value="draft" data-v-option>Draft</option>
+									<option value="private" data-v-option>Private</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="mb-3" data-v-if="this.template_missing">
+						<div class="alert alert-warning" role="alert">
+							<div data-v-template_missing></div>
+						</div>
+					</div>					
+				</div>
+
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+	@@include('../_includes/main-footer.html')
+</div>
+</div>
+
+</div>
+</div>
+
+@@include('../_includes/footer-scripts.html')
+
+<script>
+@@include('../_includes/media-variables.html');
+let linkUrl           = '{ $this->linkUrl }';
+let oEmbedProxyUrl    = '{ $this->oEmbedProxyUrl }';
+let vvvebThemeCss     = '{ $this->themeCss }';//'/themes/blog-default/css/admin-post-editor.css'
+let productOption     = { $this->option };
+let contentType       = 'product';
+let postType          = '{ $this->type }';
+let themeFonts        = { $this->themeFonts };
+</script>
+
+<script id="autocomplete-js" src="libs/autocomplete/autocomplete.js"></script>	
+<!-- <script id="openverse-js" src="libs/media/openverse.js"></script> -->
+<script id="media-js" src="libs/media/media.js"></script>
+<script id="index-js" src="libs/vvveb/index.js"></script>
+<link id="media-css" href="libs/media/media.css" rel="stylesheet">
+
+<script id="tinymce-options-js" src="/js/libs/tinymce-options.js"></script>
+<script id="tinymce-lang-code">
+let lang = "{$this->global.locale}";
+if (lang != "en-us") {
+	tinyMceOptions["language"] = "{$this->global.locale}";
+	tinyMceOptions["directionality"] = ("{$this->global.rtl}" == "1" ? 'rtl' : 'ltr');
+	tinyMceOptions["language_load"] = true;
+	//tinyMceOptions["language_url"] = "../../js/libs/tinymce-dist/langs/" + lang + ".js";
+}
+</script>
+<!-- 
+<script type="module" src="/js/libs/tinymce-dist/jquery.tinymce.min.js"></script>
+ -->
+<script id="tinymce-js" src="/js/libs/tinymce-dist/tinymce.min.js"></script>
+<script id="oembed-js" src="/js/libs/oembed.js"></script>
+<script id="tinymce-embed-js" src="/js/libs/tinymce-embed.js"></script>
+
+<!-- date time picker -->
+<script id="moment-min-js" src="libs/daterangepicker/moment.min.js"></script>
+<script id="daterangepicker-js" src="libs/daterangepicker/daterangepicker.js"></script>
+<link id="daterangepicker-css" href="libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<script id="revisions-js" src="/js/admin/revisions.js"></script>
+<script id="functions-js" src="/js/admin/functions.js"></script>
+<script id="content-js"src="js/content.js"></script>
+
+
+<script>
+let data = {};
+let variants = {};
+let options = document.querySelectorAll("[data-v-poption].tab-pane");
+options.forEach(option => {
+	let values = option.querySelectorAll("[data-v-option-value]");
+	let input = option.querySelector("[data-v-poption-product_option_id]");
+	let optionId = input.value;
+	variants[optionId] = {};
+	values.forEach(value => { 
+		let textInput = value.querySelector("[data-v-option-value-option_value_id]");
+		let valInput = value.querySelector("[data-v-option-value-product_option_value_id]");
+		let valueId = valInput.value;
+		let text = textInput.options[textInput.selectedIndex].text;
+		variants[optionId][valueId] = text;
+	});
+});
+
+
+let combinations = {};
+let result = {};
+
+
+function comb(arr) {
+	let names = [], values = [];
+	
+	for (optionId in arr) {
+		let set = arr[optionId];
+		if (!names.length) {
+			for (let i in set) {
+				names.push(set[i]);
+				values.push(optionId + ":" + i);
+			}
+		} else {
+			let length = names.length;
+			let newNames = [];
+			let newValues = [];
+			for (let i = 0; i < length; i++) {
+				let currName = names[i];
+				for (let j in set) {
+					newNames.push(currName + " - " + set[j]);
+					newValues.push(values[i] + "," + optionId + ":" +j);
+				}
+			}
+			
+			names = newNames;
+			values = newValues;
+		}		
+	}
+	
+	return [names, values];
+}
+
+function addAllVariants() {
+	//get existing variants to skip them
+	let existingVariants = [];
+	document.querySelectorAll("#tab-variant [data-v-variant-combination]").forEach(e => existingVariants.push(e.value));
+
+	for (let i in result[1]) {
+		let options = result[1][i];
+		if (existingVariants.indexOf(options) > -1) {
+			continue;
+		}
+		
+		let row = addTemplate("#variant-template", "product_variant", "#variant");
+		row.querySelector("#variant-template [data-v-variant-combination]").value = options;
+		
+	}
+}
+
+result = comb(variants);
+
+let variantSelect = document.querySelector("#variant-template [data-v-variant-combination]");
+variantSelect.innerHTML = "";
+for (let i in result[0]) {
+	variantSelect.options.add(new Option(result[0][i], result[1][i]));
+}
+
+/*
+document.querySelectorAll('input.autocomplete').forEach(el => new _AutocompleteInput(el, el.dataset));
+document.querySelectorAll('input.autocomplete-list').forEach(el => new _AutocompleteList(el, el.dataset));
+
+document.querySelectorAll('.taxonomies input.tags-input').forEach(el => {
+	new _TagsInput(el,{
+		url: "/admin/?module=product/product&action=categoriesAutocomplete&type=tags",
+		parameters:el.dataset,
+		listName:"tag",
+		//listName:"tag[]",
+		listId:el.dataset.taxonomy_id, //element.dataset.taxonomy_id,
+		allowFreeText:true
+	});
+});
+
+//intialize tinyMce if loaded, some plugins may remove tinymce to load a different editor
+if (typeof tinyMceOptions  !== 'undefined') {
+	window.dispatchEvent(new CustomEvent("tinymce.options", {detail: tinyMceOptions}));
+	tinymce.init(tinyMceOptions);
+}
+
+document.querySelectorAll('#tab-general .tab-pane[data-v-language]').forEach(el => {
+	let titleInput = el.querySelector('[data-v-product-content-name]');
+	let slugInput = el.querySelector('[data-v-product-content-slug]');
+	let urlInput = el.querySelector('[data-v-url]');
+	let orig = slugify(titleInput.value);
+	
+	//change slug only if current value is the same as the text
+	titleInput.addEventListener('keyup', function (e) {
+		let text = this.value;
+		delay(() => {
+			let slug = slugInput.value;
+			urlInput.textContent = "/" + slug;
+			urlInput.setAttribute("href", "/" + slug);
+			
+			if (orig == slug || !slug) {
+				orig = slugify(text);
+				slugInput.value = orig;
+			}
+		}, 500);
+	});
+	
+	slugInput.addEventListener('keyup', function (e) {
+		let slug = this.value;
+		urlInput.textContent = "/" + slug;
+		urlInput.setAttribute("href", "/" + slug);
+	});
+	
+});
+*/
+</script>
+
+@@include('../_includes/footer.html')
